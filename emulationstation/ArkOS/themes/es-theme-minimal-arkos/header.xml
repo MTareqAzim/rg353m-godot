@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Theme: Minimal
+Original author: Lilbud
+License: creative commons CC-BY-NC-SA
+-->
+<theme>
+  <formatVersion>7</formatVersion>
+  
+  <view name="screen">
+    <text name="clock">
+      <pos>0.85 -0.11</pos>
+      <size>0.07 .2</size>
+      <fontSize>0.025</fontSize>
+      <color>FFFFFFC0</color>
+      <horizontalAlignment>center</horizontalAlignment>
+      <verticalAlignment>center</verticalAlignment>
+      <fontPath>./assets/SST.ttf</fontPath>
+    </text>
+  </view>
+  
+  <view name="system">
+    <helpsystem name="help">
+	  <textColor>FFFFFF90</textColor>
+      <iconColor>FFFFFF90</iconColor>
+      <fontSize>0.025</fontSize>
+    </helpsystem>
+  </view>
+  
+  <view name="basic, detailed, grid">
+    <helpsystem name="help">
+	  <textColor>FFFFFF90</textColor>
+      <iconColor>FFFFFF90</iconColor>
+      <fontSize>0.025</fontSize>
+    </helpsystem>
+  </view>
+  
+</theme>
