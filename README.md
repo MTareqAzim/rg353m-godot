@@ -21,7 +21,7 @@ Repository for running Godot on the RG353M
 2. Restart Emulation Station or scan for new games and it should detect any new files.
 
 # Demo Game
-I've added a demo game for each version of Godot available on the system. It basically helps to check if your handheld's buttons are mapped properly to the game/engine. Press start + select to quit the game.
+I've added a demo game for each version of Godot available on the system. It basically helps to check if your handheld's buttons are mapped properly to the game/engine. Press start + select to quit the game. You can unzip the `.zip` files to see the code I use for this game.
 
 # Logging
 Games you play will log their output into the logs folder in their respective version folders. The logs are named as such `log_%month_%day_%hour_%minute_%second.txt`.
@@ -34,6 +34,8 @@ The lib folder is basically that. The folder to store libraries (Linux's dlls) y
   - The ARM hardware means your rendering mindset should be for Android (no depth-prepasses, no face culling, simple lighting).
   - Vulkan is not avilable on the current drivers (January 2023) compiled for UnofficialOS and ArkOS. So build for OpenGL ES 3.0. (Compatability Mode in Godot v4.0)
   - Godot v4.0 is still in beta currently, so there will be unexpected bugs. Godot v3.5.1 is more stable, but may have some quirks due to the hardware it is running on.
+  - Make sure you add an exit shortcut to your game. I do this by adding an AutoLoad that closes the game when start and select are pressed (Similar to quitting on RetroArch)
+  - Check out the appropriate demo game `.zip` files to see some demo code.
 
 # Exporting For These Handhelds
   - Make a Linux export. You do not need any export templates.
