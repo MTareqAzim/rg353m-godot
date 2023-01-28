@@ -13,6 +13,7 @@ Repository for running Godot on the RG353M
     - If you're not ssh into your system, just place the folder into your roms folder then move or copy it into the proper directory using the in-built file manager on your handheld's OS.
     - I've added a theme that adds the Godot logo to the theme.
     - If you are using ArkOS, depending on which folder, `/roms/`(SD/TF Slot 1) or `/roms2/`(SD/TF Slot 2), you use, choose the correct `es_systems_godot.cfg`
+    - More info on how the CFG file is written and the Themes are edited in the ![README](/emulationstation/README.md) in the emulationstation folder.
 4. Restart Emulation Station to see the Godot system show up.
     - Note, the system won't show up if you don't have any games in the godot folder.
 
@@ -46,7 +47,7 @@ The lib folder is basically that. The folder to store libraries (Linux's dlls) y
 # Notes
   - I mainly use UnofficialOS, so my bins are targetted for that OS. Godot v3.5.1 should work on ArkOS as well, but Godot v4.0 beta might need to be recompiled.
   - This should work for the other versions, the RG353P/V, out of the box following the same instructions.
-  - If you understand how to write bash scripts, `gamerunner` in `/godot/tools/` is the script used to start the engine. You can change it to suit the handheld you have and get it running on that. You might have to recompile Godot to fit your system though.
+  - If you understand how to write bash scripts, `gamerunner` in `/godot/tools/` is the script used to start the engine. You can change it to suit the handheld you have and get it running on that. You might have to recompile Godot to fit your system though. More info in the ![README](/godot/README.md) in the godot folder.
   - Ultimately, this is just for fast prototyping and playtesting. The better method of playing your finished game is using the Android frontend by exporting for Android. The hardware these handhelds are built on were made for Android devices and are more fully utilized on the Android side (Vulkan for instance). But Android's export method is not as quick as Linux's for prototyping. So this is just a compromise.
   
 # Acknowledgements
