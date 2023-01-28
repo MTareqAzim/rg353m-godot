@@ -45,7 +45,7 @@ The lib folder is basically that. The folder to store libraries (Linux's dlls) y
   - Export just as a `.pck` or `.zip`.
 
 # Notes
-  - I mainly use UnofficialOS, so my bins are targetted for that OS. Godot v3.5.1 should work on ArkOS as well, but Godot v4.0 beta might need to be recompiled.
+  - I mainly use UnofficialOS, so my bins are targetted for that OS. Godot v3.5.1 should work on ArkOS as well, but Godot v4.0 beta might need to be recompiled. For more info on how to compile bins for Godot, check our efornara's repository here: ![FRT Repository](https://github.com/efornara/frt). You can also download precompiled bins there as well to try out.
   - This should work for the other versions, the RG353P/V, out of the box following the same instructions.
   - If you understand how to write bash scripts, `gamerunner` in `/godot/tools/` is the script used to start the engine. You can change it to suit the handheld you have and get it running on that. You might have to recompile Godot to fit your system though. More info in the ![README](/godot/tools/README.md) in the godot/tools/ folder.
   - Ultimately, this is just for fast prototyping and playtesting. The better method of playing your finished game is using the Android frontend by exporting for Android. The hardware these handhelds are built on were made for Android devices and are more fully utilized on the Android side (Vulkan for instance). But Android's export method is not as quick as Linux's for prototyping. So this is just a compromise.
