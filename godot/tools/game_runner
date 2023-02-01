@@ -20,7 +20,7 @@ driver="opengl3"
 # Add the new bin in the bin folder and change FRT to use a different version of godot.
 if [[ $GAME == *"/v400/"* ]]; then
 # Godot v4.0.0 beta
-  FRT="frt_210a_400-518b9e5_arm64v8.bin"
+  FRT="frt_210a_400-0a9e6e4_arm64v8.bin"
   LOG_TXT="$LOGS/v400/log_$now.txt"
   #driver="vulkan"
 elif [[ $GAME == *"/v351/"* ]]; then
