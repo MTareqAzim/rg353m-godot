@@ -1,16 +1,20 @@
-#!/usr/bin/bash
+#!/bin/bash
 
-if [[ -d "/roms2/godot" ]]; then
-  GAMEDIR="/roms2/godot"
-elif [[ -d "/storage/roms/godot" ]]; then
-  GAMEDIR="/storage/roms/godot"
+if [ -d "/opt/system/Tools/PortMaster/" ]; then
+  controlfolder="/opt/system/Tools/PortMaster"
+elif [ -d "/opt/tools/PortMaster/" ]; then
+  controlfolder="/opt/tools/PortMaster"
 else
-  GAMEDIR="/roms/godot"
+  controlfolder="/roms/ports/PortMaster"
 fi
 
-LOGS="$GAMEDIR/logs"
-res="640x480"
-GAME="${1}"
+source $controlfolder/control.txt
+
+get_controls
+
+GAMEDIR=/$directory/godot
+LOGS=$GAMEDIR/logs
+GAME=${1}
 
 cd $GAMEDIR/bin/
 
@@ -19,28 +23,32 @@ driver="opengl3"
 
 # Add the new bin in the bin folder and change FRT to use a different version of godot.
 if [[ $GAME == *"/v400/"* ]]; then
-# Godot v4.0.0 beta
-  FRT="frt_210a_400-c4fb119_arm64v8.bin"
+# Godot v4.0 stable
+  FRT="frt_210b_400_arm64v8.bin"
   LOG_TXT="$LOGS/v400/log_$now.txt"
-  #driver="vulkan"
+  if [[ $(ldconfig -p | grep libvulkan.so.1) ]]; then
+    driver="vulkan"
+  fi
 elif [[ $GAME == *"/v351/"* ]]; then
 # Godot v3.5.1
   FRT="frt_210a_351_arm64v8.bin"
   LOG_TXT="$LOGS/v351/log_$now.txt"
 else
-# Default to Godot v3.5.1
-  FRT="frt_210a_351_arm64v8.bin"
+# Default to Godot v4.0
+  FRT="frt_210b_400_arm64v8.bin"
   LOG_TXT="$LOGS/default/log_$now.txt"
   echo "Defaulted to $FRT" >> $LOG_TXT
 fi
 
 echo "Booting up the game: $GAME" >> $LOG_TXT
 
+# TODO Remove on release to depend on PortMaster's implementation of detecting controllers
+# Only reason why this is here because I have switched around the abxy buttons on my device.
 sdl_controllerconfig="190000004b4800000111000000010000,retrogame_joypad,platform:Linux,a:b0,b:b1,x:b3,y:b2,back:b8,start:b9,rightstick:b12,leftstick:b11,dpleft:b15,dpdown:b14,dpright:b16,dpup:b13,leftshoulder:b4,lefttrigger:b6,rightshoulder:b5,righttrigger:b7,leftx:a0,lefty:a1,rightx:a2,righty:a3,"
 
 export FRT_NO_EXIT_SHORTCUTS=true
 export SDL_GAMECONTROLLERCONFIG="$sdl_controllerconfig"
 export LD_LIBRARY_PATH="$GAMEDIR/lib"
 
-./$FRT -f -v --rendering-driver $driver --resolution $res --main-pack $GAME 2>&1 | tee -a $LOG_TXT
+./$FRT -f -v --rendering-driver $driver --main-pack $GAME 2>&1 | tee -a $LOG_TXT
 
