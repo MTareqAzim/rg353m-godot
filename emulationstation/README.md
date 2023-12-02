@@ -1,6 +1,6 @@
 # Emulation Station Files
 Emulation Station checks the file `es_systems.cfg` to know what systems are used. But if you edit this file, it no longer gets updated when the respective OS pushes an update.
-Instead, you can create an extension to this config with the name `es_systems_name.cfg`. So you just need to drop `es_systems_godot.cfg` into the `emulationstation/` folder.
+Instead, you can create an extension to this config with the name `es_systems_name.cfg`. So you just need to drop `es_systems_godot.cfg` into the `emulationstation/` folder for JelOS. For ArkOS, you need to add the `es_systems.cfg` directly into the `~/.emulationstation/` folder, the one in the ark home folder. This will override the default one, but not overwrite it.
 
 ## Extension File Configuration
 ```

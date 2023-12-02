@@ -8,11 +8,12 @@ Repository for running Godot on the RG353M
 2. Navigate to your emulationstation folder on your device.
     - This can be done through ssh or using the in-built file manager on your handheld's OS.
     - Usually like `/etc/emuationstation/` or `/storage/.emulationstation/`
+    - For ArkOS, you navigate to the `~/.emulationstation/` folder.
 3. Add the appropriate files and folders from the emulationstation folder based on your OS.
     - All you really need to add is the `es_systems_godot.cfg` to this folder.
     - If you're not ssh into your system, just place the folder into your roms folder then move or copy it into the proper directory using the in-built file manager on your handheld's OS.
     - I've added a theme that adds the Godot logo to the theme.
-    - If you are using ArkOS, depending on which folder, `/roms/`(SD/TF Slot 1) or `/roms2/`(SD/TF Slot 2), you use, choose the correct `es_systems_godot.cfg`
+    - If you are using ArkOS, depending on which folder, `/roms/`(SD/TF Slot 1) or `/roms2/`(SD/TF Slot 2), you use, choose the correct `es_systems.cfg`
     - More info on how the CFG file is written and the Themes are edited in the ![README](/emulationstation/README.md) in the emulationstation folder.
 4. Restart Emulation Station to see the Godot system show up.
     - Note, the system won't show up if you don't have any games in the godot folder.
